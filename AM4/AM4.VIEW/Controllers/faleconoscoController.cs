@@ -114,7 +114,7 @@ namespace AM4.VIEW.Views
             objSmtp.Host = "smtp.gmail.com";
             objSmtp.EnableSsl = true;
             objSmtp.Port = 587;
-            objSmtp.Credentials = new NetworkCredential("am4faleconosco", "am4faleconosco1710");
+            objSmtp.Credentials = new NetworkCredential("am4faleconosco@gmail.com", "am4faleconosco1710");
             objSmtp.Send(objEmail);
         }
     }
