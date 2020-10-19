@@ -1,0 +1,203 @@
+﻿@model AM4.VIEW.Partial.FaleConoscoPartial
+
+@{
+    ViewData["Title"] = "Fale Conosco";
+}
+
+<div class="row">
+    <div class="col">
+        <h4>Formulário</h4>
+    </div>
+    <div class="col">
+        <div class="d-flex justify-content-end">
+            <a class="nav-link text-danger" asp-area="" asp-controller="admin" asp-action="faleconosco">Lista Submissões(Restrito)</a>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <form asp-action="Create" class="col-md-12">
+        @if (TempData["$AlertMessageFeedback$"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show col-md-5" role="alert">
+                <strong>Mensagem enviada com sucesso!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+        <div class="form-row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-md-5">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="DtNascimento" class="control-label"></label>
+                <input asp-for="DtNascimento" class="form-control" />
+                <span asp-validation-for="DtNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="Cpf" class="control-label"></label>
+                <input asp-for="Cpf" type="text" placeholder="___.___.___-__" class="form-control" />
+                <span asp-validation-for="Cpf" class="text-danger"></span>
+                <div id="cpf-validation"></div>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="Celular" class="control-label"></label>
+                <input asp-for="Celular" placeholder="(__) _ ____-____" class="form-control" />
+                <span asp-validation-for="Celular" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-5">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="Cep" class="control-label"></label>
+                <input asp-for="Cep" maxlength="8" class="form-control" />
+                <span asp-validation-for="Cep" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Rua" class="control-label"></label>
+                <input asp-for="Rua" class="form-control" />
+                <span asp-validation-for="Rua" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label asp-for="Complemento" class="control-label"></label>
+                <input asp-for="Complemento" class="form-control" />
+                <span asp-validation-for="Complemento" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Bairro" class="control-label"></label>
+                <input asp-for="Bairro" class="form-control" />
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="Cidade" class="control-label"></label>
+                <input asp-for="Cidade" class="form-control" />
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Idestado" class="control-label"></label>
+                <select asp-for="Idestado" class="form-control" asp-items="ViewBag.Idestado">
+                    <option value="" disabled selected></option>
+                </select>
+                <span asp-validation-for="Idestado" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label asp-for="TituloMensagem" class="control-label"></label>
+                <input asp-for="TituloMensagem" class="form-control">
+                <span asp-validation-for="TituloMensagem" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-9">
+                <label asp-for="TextoMensagem" class="control-label"></label>
+                <textarea asp-for="TextoMensagem" class="form-control"></textarea>
+                <span asp-validation-for="TextoMensagem" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Enviar" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+<script>
+    jQuery("#Cpf")
+        .mask("999.999.999-99")
+        .focusout(function (event) {
+            var target, element;
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);
+            element.unmask();
+            element.mask("999.999.999-99");
+        });
+
+    jQuery("#Celular")
+        .mask("(99) 9 9999-9999")
+        .focusout(function (event) {
+            var target, element;
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);
+            element.unmask();
+            element.mask("(99) 9 9999-9999");
+        });
+
+    jQuery("#Cep")
+        .mask("99999999")
+        .focusout(function (event) {
+            var target, element;
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);
+            element.unmask();
+            element.mask("99999999");
+        });
+</script>
+
+
+<script>
+    function TestaCPF(strCPF) {
+        var Soma;
+        var Resto;
+        Soma = 0;
+        if (strCPF == "00000000000") return false;
+
+        for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+        Resto = (Soma * 10) % 11;
+
+        if ((Resto == 10) || (Resto == 11)) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+
+        Soma = 0;
+        for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+        Resto = (Soma * 10) % 11;
+
+        if ((Resto == 10) || (Resto == 11)) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+        return true;
+    }
+
+    $("#Cpf").blur(function () {
+        var spanValidation = "<span id='span-CPF' class='text-danger'>CPF inválido</span>"
+
+        $("#span-CPF").remove();
+        var cpfSemMascara = $("#Cpf").val().replace(".", "").replace("-", "").replace(".", "");
+        var cpfOk = TestaCPF(cpfSemMascara);
+        if (cpfOk == false && $("#Cpf").val() != "") {
+            $("#cpf-validation").append(spanValidation);
+        }
+    });
+
+    window.onload = function () {
+        var ok = $("#msgOk").val();
+
+        if (ok == "ok") {
+            alert("Feedback enviado com sucesso");
+            $("#msgOk").val("");
+        }
+    };
+</script>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

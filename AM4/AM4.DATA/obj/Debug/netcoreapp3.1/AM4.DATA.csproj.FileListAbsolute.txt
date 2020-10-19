@@ -1,0 +1,12 @@
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\bin\Debug\netcoreapp3.1\AM4.DATA.deps.json
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\bin\Debug\netcoreapp3.1\AM4.DATA.dll
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\obj\Debug\netcoreapp3.1\AM4.DATA.csprojAssemblyReference.cache
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\obj\Debug\netcoreapp3.1\AM4.DATA.AssemblyInfoInputs.cache
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\obj\Debug\netcoreapp3.1\AM4.DATA.AssemblyInfo.cs
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\bin\Debug\netcoreapp3.1\AM4.DATA.runtimeconfig.json
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\bin\Debug\netcoreapp3.1\AM4.DATA.runtimeconfig.dev.json
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\bin\Debug\netcoreapp3.1\AM4.DATA.pdb
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\obj\Debug\netcoreapp3.1\AM4.DATA.csproj.CoreCompileInputs.cache
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\obj\Debug\netcoreapp3.1\AM4.DATA.dll
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\obj\Debug\netcoreapp3.1\AM4.DATA.pdb
+C:\Users\luizf\Desktop\AM4\AM4\AM4.DATA\obj\Debug\netcoreapp3.1\AM4.DATA.genruntimeconfig.cache

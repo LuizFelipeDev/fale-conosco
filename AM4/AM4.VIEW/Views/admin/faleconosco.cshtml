@@ -1,0 +1,100 @@
+﻿@model AM4.VIEW.Partial.FaleConoscoPartial
+
+@{
+    ViewData["Title"] = "faleconosco";
+}
+
+<h1>Lista Submissões</h1>
+
+<div>
+    <hr />
+    <div class="row">
+        <form asp-action="VerExcluir" class="col-md-12">
+
+            @if (TempData["$AlertMessageExclusão$"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show col-md-5" role="alert">
+                    <strong>Item excluído com sucesso!</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+
+            @if (TempData["$AlertMessageEmailResposta$"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show col-md-5" role="alert">
+                    <strong>Resposta enviada com sucesso!</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+
+            <table class="table table-sm table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th class="w-25" scope="col">Nome</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Data de Envio</th>
+                        <th scope="col">Título / Motivo</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    @if (ViewData["ListaSubmissoes"] != null)
+                    {
+                        foreach (var item in (List<AM4.VIEW.Partial.FaleConoscoPartial>)ViewData["ListaSubmissoes"])
+                        {
+                            <tr>
+                                <th scope="col">
+                                    @item.FaleCId
+                                </th>
+                                <th scope="col">
+                                    @item.Nome
+                                </th>
+                                <th scope="col">
+                                    @item.Celular
+                                </th>
+                                <th>
+                                    @item.Email
+                                </th>
+                                <th>
+                                    @item.DataEnvioStr
+                                </th>
+                                <th>
+                                    @item.TituloMensagem
+                                </th>
+                                <th>
+                                    <button class="btn btn-primary btn-sm VerSubmissao" name="VerSubmissao" value="@item.FaleCId">
+                                        Ver
+                                    </button> |
+                                    <button class="btn btn-danger btn-sm ExcluirSubmissao" id="ExcluirSubmissao" name="ExcluirSubmissao" value="@item.FaleCId">
+                                        Remover
+                                    </button>
+                                </th>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <div class="form-group">
+                <a asp-controller="faleconosco" asp-action="Index" class="btn btn-primary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#ExcluirSubmissao").click(function () {
+            var aux = confirm('Deseja realizar a ação?');
+            if (!aux) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>

@@ -1,0 +1,41 @@
+﻿{
+   "ContextClassName": "AM4_BDContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "AM4.DATA",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Estado]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Fale_Conosco]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Mensagem]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Pessoa]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNodaTime": false,
+   "UseSpatial": false,
+   "UseStoredProcedures": false
+}
